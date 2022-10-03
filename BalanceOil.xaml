@@ -1,0 +1,27 @@
+﻿<Window x:Class="ARM_Baidankino.BalanceOil"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ARM_Baidankino"
+        mc:Ignorable="d"
+        Title="Баланс нефти" Height="450" Width="854.962">
+    <Grid>
+        <Label Content="Пеиод с " HorizontalAlignment="Left" Margin="79,26,0,0" VerticalAlignment="Top"/>
+
+        <DatePicker x:Name="DateStart"  HorizontalAlignment="Left" Margin="141,26,0,0" VerticalAlignment="Top" CalendarClosed="CalendarClosed"/>
+        <DatePicker x:Name="DateEnd" HorizontalAlignment="Left" Margin="306,26,0,0" VerticalAlignment="Top" CalendarClosed="CalendarClosed"/>
+        <DataGrid x:Name="ExitTable" HorizontalAlignment="Left" AutoGenerateColumns="False" Height="324" Margin="10,85,0,0" VerticalAlignment="Top" Width="827">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Дата" Width="*" Binding="{Binding Path=DateEvent.Date}"/>
+                <DataGridTextColumn Header="Отгружено по счетчику м³" Width="*" Binding="{Binding Path=CounterData}"/>
+                <DataGridTextColumn Header="Отгружено без счетчика м³" Width="*" Binding="{Binding Path=ManualData}"/>
+                <DataGridTextColumn Header="Отгужено всего м³" Width="*" Binding="{Binding Path=TotalData}"/>
+                <DataGridTextColumn Header="Добыто на месторождении м³" Width="*" Binding="{Binding Path=TotalBallance}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label Content="по" HorizontalAlignment="Left" Margin="265,24,0,0" VerticalAlignment="Top"/>
+
+
+    </Grid>
+</Window>

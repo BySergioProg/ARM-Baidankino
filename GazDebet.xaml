@@ -1,0 +1,24 @@
+﻿<Window x:Class="ARM_Baidankino.GazDebet"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ARM_Baidankino"
+        mc:Ignorable="d"
+        Title="Дебет газа" Height="450" Width="479.389">
+    <Grid>
+        <Label Content="Пеиод с " HorizontalAlignment="Left" Margin="79,26,0,0" VerticalAlignment="Top"/>
+
+        <DatePicker x:Name="DateStart"  HorizontalAlignment="Left" Margin="141,26,0,0" VerticalAlignment="Top" CalendarClosed="CalendarClosed"/>
+        <DatePicker x:Name="DateEnd" HorizontalAlignment="Left" Margin="306,26,0,0" VerticalAlignment="Top" CalendarClosed="CalendarClosed"/>
+        <DataGrid x:Name="ExitTable" HorizontalAlignment="Left" AutoGenerateColumns="False" Height="324" Margin="10,85,0,0" VerticalAlignment="Top" Width="450">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Дата" Width="*" Binding="{Binding Path=DateEvent.Date}"/>
+                <DataGridTextColumn Header="Расход газа за сутки" Width="*" Binding="{Binding Path=Value}"/>
+              
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label Content="по" HorizontalAlignment="Left" Margin="265,24,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>

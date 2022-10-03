@@ -1,0 +1,18 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="ARM_Baidankino.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Ip" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">185.6.81.66</Value>
+    </Setting>
+    <Setting Name="Sql" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">AUDIT\SQLEXPRESS</Value>
+    </Setting>
+    <Setting Name="AlarmLevelE1" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="AlarmLevelE2" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">4</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

@@ -1,0 +1,25 @@
+﻿<Window x:Class="ARM_Baidankino.ManualAdd"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ARM_Baidankino"
+        mc:Ignorable="d"
+        Title="Добавление отгрузки" Height="450" Width="300">
+    <Grid>
+        <DataGrid x:Name="Dat" CanUserDeleteRows="True" CanUserAddRows="False" IsReadOnly="False"   AutoGenerateColumns="False"  HorizontalAlignment="Left" Height="334" Margin="18,75,0,0" VerticalAlignment="Top" Width="256" SelectionChanged="Dat_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Visibility="Hidden" Width="40*" IsReadOnly="True" Header="Дата" Binding="{Binding Path=id, Mode=TwoWay}"/>
+                <DataGridTextColumn Visibility="Hidden" Width="40*" IsReadOnly="True" Header="Дата" Binding="{Binding Path=UserName, Mode=TwoWay}"/>
+                <DataGridTextColumn Width="40*" IsReadOnly="True" Header="Дата" Binding="{Binding Path=Date, Mode=TwoWay}"/>
+                <DataGridTextColumn Width="30*" IsReadOnly="False" Header="Объем" Binding="{Binding Path=OilCount, Mode=TwoWay}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Добавить/Сохранить" HorizontalAlignment="Left" Margin="150,30,0,0" VerticalAlignment="Top" Width="124" Click="Button_Click"/>
+        <TextBox x:Name="OilCnt"  HorizontalAlignment="Left" Height="23" Margin="76,30,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="62" PreviewTextInput="OilCnt_PreviewTextInput"/>
+        <Label Content="Объем м³" HorizontalAlignment="Left" Margin="10,30,0,0" VerticalAlignment="Top"/>
+
+
+
+    </Grid>
+</Window>

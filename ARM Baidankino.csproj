@@ -1,0 +1,340 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C8A9DB34-E53D-4B04-8713-B7967EB5A036}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ARM_Baidankino</RootNamespace>
+    <AssemblyName>ARM Baidankino</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>dns.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="S7.Net, Version=0.10.0.0, Culture=neutral, PublicKeyToken=d5812d469e84c693, processorArchitecture=MSIL">
+      <HintPath>packages\S7netplus.0.10.0\lib\net452\S7.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="BalanceOil.xaml.cs">
+      <DependentUpon>BalanceOil.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GazDebet.xaml.cs">
+      <DependentUpon>GazDebet.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GradTable.cs" />
+    <Compile Include="Logger.cs" />
+    <Compile Include="ManualAdd.xaml.cs">
+      <DependentUpon>ManualAdd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ManualAddRecord.cs" />
+    <Compile Include="Models\Alarm.cs" />
+    <Compile Include="Models\DbConnect.cs" />
+    <Compile Include="Models\GazDay.cs" />
+    <Compile Include="Models\GazHour.cs" />
+    <Compile Include="Models\LevelHistory.cs" />
+    <Compile Include="Models\ManualOil.cs" />
+    <Compile Include="Models\OilCount.cs" />
+    <Compile Include="Models\UserData.cs" />
+    <Compile Include="PlcSetup.cs" />
+    <Compile Include="ReadGradTable.cs" />
+    <Compile Include="SaveErrors.cs" />
+    <Compile Include="SettingsForm.xaml.cs">
+      <DependentUpon>SettingsForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ShowAlarms.xaml.cs">
+      <DependentUpon>ShowAlarms.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Trends.xaml.cs">
+      <DependentUpon>Trends.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Authorisation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BalanceOil.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GazDebet.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Authorisation.xaml.cs">
+      <DependentUpon>Authorisation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="formdata.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="ManualAdd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SettingsForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ShowAlarms.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Trends.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="PlcData.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="GradTable\Tank25.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="GradTable\Tank50.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\90_degree_bend_1_blue.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\90_degree_bend_1_darkblue.png" />
+    <Resource Include="Resources\90_degree_bend_1_green.png" />
+    <Resource Include="Resources\90_degree_bend_1_grey.png" />
+    <Resource Include="Resources\90_degree_bend_1_light.png" />
+    <Resource Include="Resources\90_degree_bend_1_middledark.png" />
+    <Resource Include="Resources\90_degree_bend_1_red.png" />
+    <Resource Include="Resources\90_degree_bend_1_standard.png" />
+    <Resource Include="Resources\90_degree_bend_1_white.png" />
+    <Resource Include="Resources\90_degree_bend_1_yellow.png" />
+    <Resource Include="Resources\90_degree_bend_2_blue.png" />
+    <Resource Include="Resources\90_degree_bend_2_darkblue.png" />
+    <Resource Include="Resources\90_degree_bend_2_green.png" />
+    <Resource Include="Resources\90_degree_bend_2_grey.png" />
+    <Resource Include="Resources\90_degree_bend_2_light.png" />
+    <Resource Include="Resources\90_degree_bend_2_middledark.png" />
+    <Resource Include="Resources\90_degree_bend_2_red.png" />
+    <Resource Include="Resources\90_degree_bend_2_standard.png" />
+    <Resource Include="Resources\90_degree_bend_2_white.png" />
+    <Resource Include="Resources\90_degree_bend_2_yellow.png" />
+    <Resource Include="Resources\90_degree_bend_3_blue.png" />
+    <Resource Include="Resources\90_degree_bend_3_darkblue.png" />
+    <Resource Include="Resources\90_degree_bend_3_green.png" />
+    <Resource Include="Resources\90_degree_bend_3_grey.png" />
+    <Resource Include="Resources\90_degree_bend_3_light.png" />
+    <Resource Include="Resources\90_degree_bend_3_middledark.png" />
+    <Resource Include="Resources\90_degree_bend_3_red.png" />
+    <Resource Include="Resources\90_degree_bend_3_standard.png" />
+    <Resource Include="Resources\90_degree_bend_3_white.png" />
+    <Resource Include="Resources\90_degree_bend_3_yellow.png" />
+    <Resource Include="Resources\90_degree_bend_4_blue.png" />
+    <Resource Include="Resources\90_degree_bend_4_darkblue.png" />
+    <Resource Include="Resources\90_degree_bend_4_green.png" />
+    <Resource Include="Resources\90_degree_bend_4_grey.png" />
+    <Resource Include="Resources\90_degree_bend_4_light.png" />
+    <Resource Include="Resources\90_degree_bend_4_middledark.png" />
+    <Resource Include="Resources\90_degree_bend_4_red.png" />
+    <Resource Include="Resources\90_degree_bend_4_standard.png" />
+    <Resource Include="Resources\90_degree_bend_4_white.png" />
+    <Resource Include="Resources\90_degree_bend_4_yellow.png" />
+    <Resource Include="Resources\Intersection_blue.png" />
+    <Resource Include="Resources\Intersection_darkblue.png" />
+    <Resource Include="Resources\Intersection_green.png" />
+    <Resource Include="Resources\Intersection_grey.png" />
+    <Resource Include="Resources\Intersection_light.png" />
+    <Resource Include="Resources\Intersection_middledark.png" />
+    <Resource Include="Resources\Intersection_red.png" />
+    <Resource Include="Resources\Intersection_standard.png" />
+    <Resource Include="Resources\Intersection_white.png" />
+    <Resource Include="Resources\Intersection_yellow.png" />
+    <Resource Include="Resources\Pipe_horizontal_blue.png" />
+    <Resource Include="Resources\Pipe_horizontal_darkblue.png" />
+    <Resource Include="Resources\Pipe_horizontal_green.png" />
+    <Resource Include="Resources\Pipe_horizontal_grey.png" />
+    <Resource Include="Resources\Pipe_horizontal_light.png" />
+    <Resource Include="Resources\Pipe_horizontal_middledark.png" />
+    <Resource Include="Resources\Pipe_horizontal_red.png" />
+    <Resource Include="Resources\Pipe_horizontal_standard.png" />
+    <Resource Include="Resources\Pipe_horizontal_white.png" />
+    <Resource Include="Resources\Pipe_horizontal_yellow.png" />
+    <Resource Include="Resources\Pipe_tee_down_blue.png" />
+    <Resource Include="Resources\Pipe_tee_down_darkblue.png" />
+    <Resource Include="Resources\Pipe_tee_down_green.png" />
+    <Resource Include="Resources\Pipe_tee_down_grey.png" />
+    <Resource Include="Resources\Pipe_tee_down_light.png" />
+    <Resource Include="Resources\Pipe_tee_down_middledark.png" />
+    <Resource Include="Resources\Pipe_tee_down_red.png" />
+    <Resource Include="Resources\Pipe_tee_down_standard.png" />
+    <Resource Include="Resources\Pipe_tee_down_white.png" />
+    <Resource Include="Resources\Pipe_tee_down_yellow.png" />
+    <Resource Include="Resources\Pipe_tee_left_blue.png" />
+    <Resource Include="Resources\Pipe_tee_left_darkblue.png" />
+    <Resource Include="Resources\Pipe_tee_left_green.png" />
+    <Resource Include="Resources\Pipe_tee_left_grey.png" />
+    <Resource Include="Resources\Pipe_tee_left_light.png" />
+    <Resource Include="Resources\Pipe_tee_left_middledark.png" />
+    <Resource Include="Resources\Pipe_tee_left_red.png" />
+    <Resource Include="Resources\Pipe_tee_left_standard.png" />
+    <Resource Include="Resources\Pipe_tee_left_white.png" />
+    <Resource Include="Resources\Pipe_tee_left_yellow.png" />
+    <Resource Include="Resources\Pipe_tee_right_blue.png" />
+    <Resource Include="Resources\Pipe_tee_right_darkblue.png" />
+    <Resource Include="Resources\Pipe_tee_right_green.png" />
+    <Resource Include="Resources\Pipe_tee_right_grey.png" />
+    <Resource Include="Resources\Pipe_tee_right_light.png" />
+    <Resource Include="Resources\Pipe_tee_right_middledark.png" />
+    <Resource Include="Resources\Pipe_tee_right_red.png" />
+    <Resource Include="Resources\Pipe_tee_right_standard.png" />
+    <Resource Include="Resources\Pipe_tee_right_white.png" />
+    <Resource Include="Resources\Pipe_tee_right_yellow.png" />
+    <Resource Include="Resources\Pipe_tee_up_blue.png" />
+    <Resource Include="Resources\Pipe_tee_up_darkblue.png" />
+    <Resource Include="Resources\Pipe_tee_up_green.png" />
+    <Resource Include="Resources\Pipe_tee_up_grey.png" />
+    <Resource Include="Resources\Pipe_tee_up_light.png" />
+    <Resource Include="Resources\Pipe_tee_up_middledark.png" />
+    <Resource Include="Resources\Pipe_tee_up_red.png" />
+    <Resource Include="Resources\Pipe_tee_up_standard.png" />
+    <Resource Include="Resources\Pipe_tee_up_white.png" />
+    <Resource Include="Resources\Pipe_tee_up_yellow.png" />
+    <Resource Include="Resources\Pipe_vertical_blue.png" />
+    <Resource Include="Resources\Pipe_vertical_darkblue.png" />
+    <Resource Include="Resources\Pipe_vertical_green.png" />
+    <Resource Include="Resources\Pipe_vertical_grey.png" />
+    <Resource Include="Resources\Pipe_vertical_light.png" />
+    <Resource Include="Resources\Pipe_vertical_middledark.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Pipe_vertical_red.png" />
+    <Resource Include="Resources\Pipe_vertical_standard.png" />
+    <Resource Include="Resources\Pipe_vertical_white.png" />
+    <Resource Include="Resources\Pipe_vertical_yellow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Tank_horizontal_standard.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Handvalves_horizontal_front_middledark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Digital indicator.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Burn tower.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Liquid vacuum tanker.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Signal_lamp_red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="dns.ico" />
+    <Content Include="Resources\Alarm.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Logs\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Данный проект ссылается на пакеты NuGet, отсутствующие на этом компьютере. Используйте восстановление пакетов NuGet, чтобы скачать их.  Дополнительную информацию см. по адресу: http://go.microsoft.com/fwlink/?LinkID=322105. Отсутствует следующий файл: {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+</Project>
